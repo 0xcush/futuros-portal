@@ -1,0 +1,121 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const pilots = [
+  {
+    id: "P-001",
+    title: "Agricultura de precisión y resiliencia climática en el Cerrado",
+    country: "Brasil",
+    sector: "Agro / Clima",
+    pillar: "1.1",
+    budget: "USD 80–130M",
+    status: "Candidato",
+    summary:
+      "Sensado satelital + IoT + modelos pt-BR + trazabilidad blockchain para 150K productores familiares en Cerrado. Salta intermediación tradicional y certificación burocrática.",
+  },
+  {
+    id: "P-002",
+    title: "Tutoría IA personalizada en zonas rurales de Colombia",
+    country: "Colombia",
+    sector: "Educación",
+    pillar: "1.2",
+    budget: "USD 60–95M",
+    status: "Candidato",
+    summary:
+      "Modelos on-device en español + 3 lenguas indígenas (Wayuunaiki, Nasa Yuwe, Embera) con anclaje docente humano para 200K estudiantes en Cauca, Chocó, Nariño, La Guajira.",
+  },
+  {
+    id: "P-003",
+    title: "Telesalud asistida con IA en sierra peruana",
+    country: "Perú",
+    sector: "Salud",
+    pillar: "1.3",
+    budget: "USD 70–110M",
+    status: "Candidato",
+    summary:
+      "Apoyo diagnóstico + telesalud + wearables en quechua y aimara para 1,500 postas en Cusco, Apurímac, Puno, Huancavelica, Ayacucho.",
+  },
+  {
+    id: "P-004",
+    title: "Co-piloto IA fiscal-contable para pymes mexicanas integrado a SAT",
+    country: "México",
+    sector: "Productividad",
+    pillar: "1.6",
+    budget: "USD 50–80M",
+    status: "Candidato",
+    summary:
+      "Modelos en español ajustados al marco fiscal mexicano con integración API SAT. Reduce costo de cumplimiento de 12% a 4% del revenue para 1M pymes.",
+  },
+  {
+    id: "P-005",
+    title: "Optimización red eléctrica con IA en Chile (alta penetración renovable)",
+    country: "Chile",
+    sector: "Infraestructura",
+    pillar: "1.5 + 2.1",
+    budget: "USD 90–140M",
+    status: "Candidato",
+    summary:
+      "Pronóstico minuto-a-minuto + optimización dispatching + mantenimiento predictivo para SEN. Reduce pérdidas no técnicas de 9% a 6% y curtailment de 6% a 2%.",
+  },
+];
+---
+
+<Layout title="Pilotos">
+  <h1>Pilotos bancables</h1>
+  <p class="lead">
+    Cinco pilotos candidatos que cumplen los 10 criterios de bancabilidad de Futuros: problema concreto, tesis
+    falsificable, stack ≥80% existente, partners con autoridad y capital, KPIs con baseline, riesgos top-5
+    mitigados, path de replicación.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Piloto</th>
+        <th>País</th>
+        <th>Sector</th>
+        <th>Pilar</th>
+        <th>5y</th>
+      </tr>
+    </thead>
+    <tbody>
+      {pilots.map((p) => (
+        <tr>
+          <td><code>{p.id}</code></td>
+          <td><strong>{p.title}</strong></td>
+          <td>{p.country}</td>
+          <td>{p.sector}</td>
+          <td>{p.pillar}</td>
+          <td>{p.budget}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+  <h2>Detalle de pilotos</h2>
+  {pilots.map((p) => (
+    <div class="pillar">
+      <h3>
+        <code>{p.id}</code> · {p.title}
+      </h3>
+      <p>{p.summary}</p>
+      <p>
+        <span class="tag">{p.country}</span>
+        <span class="tag">{p.sector}</span>
+        <span class="tag">{p.budget}</span>
+        <span class="tag accent">{p.status}</span>
+      </p>
+    </div>
+  ))}
+
+  <h2>Próxima ronda</h2>
+  <ul>
+    <li>P-006: Identidad digital soberana v2 (Uruguay)</li>
+    <li>P-007: Análisis de redes financieras / fiscalía (Centroamérica via Costa Rica)</li>
+    <li>P-008: Datos climáticos commons + alerta temprana (Caribe + Centroamérica)</li>
+    <li>P-009: Co-piloto comercio exterior pyme andina (Perú/Colombia/Ecuador)</li>
+    <li>P-010: Fraude fiscal aduanero (México + Colombia)</li>
+    <li>P-011: Modelos abiertos en lenguas indígenas (Bolivia + Guatemala + Paraguay)</li>
+  </ul>
+</Layout>

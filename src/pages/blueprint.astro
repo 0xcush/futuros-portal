@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Blueprint">
+  <h1>Blueprint Futuros</h1>
+  <p class="lead">
+    Documento vivo. Diez secciones que cubren visión, contexto, pilares operativos, hoja de ruta, impacto, ética,
+    financiamiento, riesgos y preguntas abiertas. Cada sección tiene cambios versionados y propietarios nombrados.
+  </p>
+
+  <h2>Estructura</h2>
+  <table>
+    <thead>
+      <tr><th>Sección</th><th>Contenido</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>00 Overview</strong></td><td>Tesis en una página. Por qué la ventana 2026–2028 importa.</td></tr>
+      <tr><td><strong>01 Visión 2035</strong></td><td>Cinco afirmaciones que serán ciertas y cómo se ve la vida cotidiana.</td></tr>
+      <tr><td><strong>02 Contexto 2026</strong></td><td>Diagnóstico estructural, trampas interconectadas, activos infrautilizados, iniciativas en curso.</td></tr>
+      <tr><td><strong>03 Pilares</strong></td><td>Sectores, fundaciones habilitantes, gobernanza regional.</td></tr>
+      <tr><td><strong>04 Hoja de ruta</strong></td><td>2026–2028 demostración → 2029–2032 escalado → 2033–2035 transformación.</td></tr>
+      <tr><td><strong>05 Impacto y KPIs</strong></td><td>Tres niveles de KPIs, inclusión vinculante, transparencia.</td></tr>
+      <tr><td><strong>06 Preguntas abiertas</strong></td><td>Ocho temas críticos para resolver antes de stakeholder roadshow.</td></tr>
+      <tr><td><strong>07 Diferenciadores</strong></td><td>Por qué Futuros no es una agenda de IA más.</td></tr>
+      <tr><td><strong>08 Financiamiento</strong></td><td>Costeo, mix de fuentes, instrumentos novedosos a diseñar.</td></tr>
+      <tr><td><strong>09 Ética e inclusión</strong></td><td>Principios mínimos vinculantes, datos indígenas, soberanía operacional.</td></tr>
+      <tr><td><strong>10 Riesgos</strong></td><td>Matriz, protocolos, riesgos aceptados explícitamente.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Pilares operativos</h2>
+  <div class="pillar">
+    <h3>Pilar 1 — Estrategias sectoriales</h3>
+    <p>
+      Seis sectores con potencial de salto no incremental: agricultura de precisión y resiliencia climática,
+      educación personalizada, salud asistida por IA, gobernanza ética y seguridad, infraestructura inteligente,
+      productividad industrial.
+    </p>
+  </div>
+  <div class="pillar">
+    <h3>Pilar 2 — Fundaciones habilitantes</h3>
+    <p>
+      Red distribuida de 5 hubs HPC alimentados por renovables, talento masivo en tres anillos
+      (10K especialistas + 300K profesionales + 15M alfabetización IA), gobernanza ética y soberanía de datos,
+      mecanismos de financiamiento público-privado.
+    </p>
+  </div>
+  <div class="pillar">
+    <h3>Pilar 3 — Gobernanza regional</h3>
+    <p>
+      Híbrido secuencial: Club Futuros 2026–2027 (4–6 países anchor) → Mesa Futuros en CELAC con apoyo
+      IDB/CAF/CEPAL 2028+. Continuidad cross-electoral mediante anclas legislativas, pactos sociales,
+      y candados políticos vía pilotos visibles temprano.
+    </p>
+  </div>
+
+  <h2>Estado</h2>
+  <p>
+    Blueprint vivo en versión 0.1.0 (2026-05). Listo para iteración con stakeholders, costeo detallado, diseño
+    de pilotos y presentación de alto nivel. Ver <a href={`${import.meta.env.BASE_URL}/preguntas`.replace(/\/+/g, '/')}>preguntas abiertas</a> para temas críticos
+    aún sin resolver.
+  </p>
+</Layout>

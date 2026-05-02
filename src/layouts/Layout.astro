@@ -1,0 +1,44 @@
+---
+import "../styles/global.css";
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = "Futuros — blueprint regional para América Latina" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} · Futuros</title>
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <header style="border-bottom: 1px solid var(--border); padding: 1rem 1.5rem;">
+      <nav style="max-width: var(--max-w); margin: 0 auto; display: flex; gap: 1.5rem; align-items: center;">
+        <a href={import.meta.env.BASE_URL} style="font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--fg); text-decoration: none;">
+          Futuros
+        </a>
+        <span style="flex: 1;"></span>
+        <a href={`${import.meta.env.BASE_URL}/blueprint`.replace(/\/+/g, '/')}>Blueprint</a>
+        <a href={`${import.meta.env.BASE_URL}/pilotos`.replace(/\/+/g, '/')}>Pilotos</a>
+        <a href={`${import.meta.env.BASE_URL}/paises`.replace(/\/+/g, '/')}>Países</a>
+        <a href={`${import.meta.env.BASE_URL}/kpis`.replace(/\/+/g, '/')}>KPIs</a>
+        <a href={`${import.meta.env.BASE_URL}/preguntas`.replace(/\/+/g, '/')}>Preguntas</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <div style="max-width: var(--max-w); margin: 0 auto;">
+        Futuros — blueprint vivo. Última actualización 2026-05.
+        <br />
+        <span style="opacity: 0.6;">Contenido en español. Iniciativa de Odisea para América Latina.</span>
+      </div>
+    </footer>
+  </body>
+</html>

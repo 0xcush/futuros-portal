@@ -1,0 +1,122 @@
+:root {
+  --bg: #0e1116;
+  --bg-soft: #161b22;
+  --fg: #e6e8eb;
+  --fg-muted: #8b949e;
+  --accent: #d97757;
+  --accent-soft: #f4ebd9;
+  --border: #232a35;
+  --max-w: 1100px;
+  --serif: Georgia, "Iowan Old Style", "Apple Garamond", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { font-size: 17px; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--fg);
+  background: var(--bg);
+  line-height: 1.55;
+}
+
+main { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem 6rem; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-top: 2.5rem;
+}
+h1 { font-size: 2.6rem; margin-top: 1rem; }
+h2 { font-size: 1.7rem; }
+h3 { font-size: 1.25rem; }
+
+p, li { font-size: 1rem; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.25rem 0;
+  font-size: 0.95rem;
+}
+th, td {
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+  vertical-align: top;
+}
+th { color: var(--fg-muted); font-weight: 500; }
+
+code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.92em;
+  background: var(--bg-soft);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.78rem;
+  border-radius: 999px;
+  background: var(--bg-soft);
+  color: var(--fg-muted);
+  border: 1px solid var(--border);
+}
+.tag.accent { background: var(--accent); color: #0e1116; border-color: var(--accent); }
+
+.lead {
+  font-size: 1.18rem;
+  color: var(--fg-muted);
+  font-family: var(--serif);
+  font-style: italic;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.kpi-card {
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  padding: 1.25rem;
+  border-radius: 8px;
+}
+.kpi-card .num {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 1;
+}
+.kpi-card .label {
+  font-size: 0.85rem;
+  color: var(--fg-muted);
+  margin-top: 0.5rem;
+}
+
+.pillar {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  background: var(--bg-soft);
+}
+.pillar h3 { margin-top: 0; }
+
+footer {
+  margin-top: 6rem;
+  padding: 2rem 1.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--fg-muted);
+  font-size: 0.85rem;
+}

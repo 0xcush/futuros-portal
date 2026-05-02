@@ -1,0 +1,79 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const questions = [
+  {
+    n: 1,
+    title: "Hogar institucional óptimo",
+    hypothesis: "Híbrido secuencial: Club Futuros 2026–2027 → Mesa Futuros en CELAC con apoyo IDB/CAF/CEPAL 2028+",
+    needs: "¿Cuántos jefes/as de Estado firman en 2026? ¿IDB acepta proveer secretariado técnico inicial? ¿Cómo absorbe CELAC sin diluir?",
+  },
+  {
+    n: 2,
+    title: "Costeo total y mix de financiamiento",
+    hypothesis: "USD 15–25 bn agregados 2026–2035, mix ~40% multilateral / 30% privado / 20% soberano / 10% filantrópico",
+    needs: "Modelo financiero detallado por pilar. Apetito real de capital privado paciente. Capacidad de absorción real país a país.",
+  },
+  {
+    n: 3,
+    title: "Gap de cómputo y talento — secuencia",
+    hypothesis: "5 hubs HPC con sede rotada por especialización; 3 anillos de talento",
+    needs: "¿Cuál es el primer hub? ¿Modelo de gobernanza: público mayoritario, privado mayoritario, paritario? Socios privados viables.",
+  },
+  {
+    n: 4,
+    title: "Marco ético — operacionalización",
+    hypothesis: "3 niveles (principios mínimos vinculantes + estándares técnicos + adaptación nacional); KPIs vinculantes",
+    needs: "¿Quién audita y con qué autoridad sancionatoria? Lista de usos rojos exhaustiva. Régimen para datos indígenas.",
+  },
+  {
+    n: 5,
+    title: "KPIs y adaptación",
+    hypothesis: "3 niveles de KPIs con dashboards públicos y auditoría externa anual",
+    needs: "Protocolo formal de pivot cuando teoría de cambio falla. Inversión en baseline antes de fijar metas vinculantes.",
+  },
+  {
+    n: 6,
+    title: "Priorización y secuencia",
+    hypothesis: "Quick wins 18 meses por país firmante + 8 pilotos cross-país",
+    needs: "¿Cuáles son los 8 pilotos y cómo se decide? Concentración en pocos líderes vs. distribución amplia.",
+  },
+  {
+    n: 7,
+    title: "Geopolítica y soberanía",
+    hypothesis: "No-alineamiento activo; 'data does not leave'; modelos abiertos preferidos",
+    needs: "Manejo de inversión china en infraestructura crítica sin parecer hostil. Política sobre uso de modelos propietarios cerrados en servicios públicos.",
+  },
+  {
+    n: 8,
+    title: "Sector privado y sociedad civil",
+    hypothesis: "Consejo Empresarial Futuros (advisory) + estándares de adhesión privada + observatorio ciudadano",
+    needs: "Incentivos concretos para que empresas regionales adhieran. Mecanismos para que observatorio no sea capturado.",
+  },
+];
+---
+
+<Layout title="Preguntas abiertas">
+  <h1>Preguntas abiertas</h1>
+  <p class="lead">
+    Ocho temas críticos que aún requieren respuesta antes de presentar Futuros a stakeholders de alto nivel. Cada
+    uno tiene hipótesis actual, qué se necesita resolver y cómo avanzar.
+  </p>
+
+  {questions.map((q) => (
+    <div class="pillar">
+      <h3>{q.n}. {q.title}</h3>
+      <p><strong>Hipótesis actual:</strong> {q.hypothesis}</p>
+      <p><strong>Necesita resolver:</strong> {q.needs}</p>
+    </div>
+  ))}
+
+  <h2>Próximos pasos</h2>
+  <ol>
+    <li>Validación de cifras baseline 2026 con CEPAL/BID/Banco Mundial.</li>
+    <li>Costeo detallado HPC: 3 RFI a operadores.</li>
+    <li>Sondeo de apetito político: 5 cancillerías clave.</li>
+    <li>Convocatoria mesa de inclusión y ética: 15 OSC + 10 académicos.</li>
+    <li>Diseño detallado de los 8 pilotos ancla.</li>
+  </ol>
+</Layout>

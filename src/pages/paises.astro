@@ -1,0 +1,84 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const countries = [
+  { name: "Brasil", role: "anchor", focus: "Hub Atlántico, agro Cerrado, SUS, modelos pt-BR" },
+  { name: "México", role: "anchor", focus: "Hub Mesoamericano, productividad pyme + SAT, manufactura nearshoring" },
+  { name: "Chile", role: "anchor", focus: "Hub Austral, gobernanza ética, minería inteligente, biotech" },
+  { name: "Colombia", role: "anchor", focus: "Agro andino, educación rural, gobernanza post-conflicto" },
+  { name: "Costa Rica", role: "anchor", focus: "Hub Caribe, talento bilingüe, telesalud, gobernanza ética" },
+  { name: "Argentina", role: "early adopter", focus: "Talento Anillo 1, agro-biotech, litio, salud-investigación" },
+  { name: "Perú", role: "early adopter", focus: "Telesalud andina, lenguas indígenas, agro andino" },
+  { name: "Uruguay", role: "early adopter", focus: "Identidad digital v2, gobernanza" },
+  { name: "Ecuador", role: "observer", focus: "Pilotos focalizados" },
+  { name: "Centroamérica", role: "observer", focus: "Vía hub Costa Rica" },
+];
+---
+
+<Layout title="Países">
+  <h1>Mapa de países</h1>
+  <p class="lead">
+    Países priorizados por rol: <strong>anchors</strong> firman el Club Futuros y aportan financiamiento sustentado;
+    <strong>early adopters</strong> aportan talento e investigación; <strong>observers</strong> participan en pilotos
+    focalizados con financiamiento mayoritariamente externo.
+  </p>
+
+  <table>
+    <thead>
+      <tr><th>País</th><th>Rol</th><th>Foco prioritario</th></tr>
+    </thead>
+    <tbody>
+      {countries.map((c) => (
+        <tr>
+          <td><strong>{c.name}</strong></td>
+          <td><span class="tag">{c.role}</span></td>
+          <td>{c.focus}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+  <h2>Hubs HPC propuestos</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Hub</th>
+        <th>Sede candidata</th>
+        <th>Energía base</th>
+        <th>Especialización</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Austral</td>
+        <td>Chile (Atacama)</td>
+        <td>Solar</td>
+        <td>Entrenamiento + inferencia</td>
+      </tr>
+      <tr>
+        <td>Atlántico</td>
+        <td>Brasil NE</td>
+        <td>Eólica + solar</td>
+        <td>Entrenamiento + soberanía pt-BR</td>
+      </tr>
+      <tr>
+        <td>Andino</td>
+        <td>Colombia o Perú</td>
+        <td>Hidro</td>
+        <td>Inferencia + edge</td>
+      </tr>
+      <tr>
+        <td>Caribe</td>
+        <td>Costa Rica o Panamá</td>
+        <td>Hidro + geotermia</td>
+        <td>Inferencia + bilingüe</td>
+      </tr>
+      <tr>
+        <td>Mesoamericano</td>
+        <td>México</td>
+        <td>Solar + viento</td>
+        <td>Manufactura digital + nearshoring</td>
+      </tr>
+    </tbody>
+  </table>
+</Layout>

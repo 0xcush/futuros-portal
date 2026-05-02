@@ -1,0 +1,86 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const outcomeKPIs = [
+  { kpi: "Crecimiento productividad laboral", baseline: "0.6%/año", meta2032: "1.5%", meta2035: "1.9–2.3%" },
+  { kpi: "Pobreza multidimensional", baseline: "25%", meta2032: "18%", meta2035: "13%" },
+  { kpi: "Coeficiente Gini regional", baseline: "0.46", meta2032: "0.43", meta2035: "0.42" },
+  { kpi: "Empleo formal nuevo (sectores Futuros)", baseline: "0", meta2032: "8M", meta2035: "15M" },
+  { kpi: "Cobertura banda ancha funcional", baseline: "75%", meta2032: "90%", meta2035: "95%" },
+  { kpi: "Cómputo crítico en jurisdicción regional", baseline: "<5%", meta2032: "35%", meta2035: "60%" },
+  { kpi: "Países con identidad digital soberana", baseline: "1", meta2032: "5", meta2035: "10+" },
+  { kpi: "HDI regional ajustado por desigualdad", baseline: "0.69", meta2032: "0.74", meta2035: "0.78" },
+];
+---
+
+<Layout title="KPIs">
+  <h1>KPIs y medición</h1>
+  <p class="lead">
+    Tres niveles: outcome regional (Visión 2035), output por pilar/sector, process por piloto. Cada KPI tiene
+    propietario nombrado, metodología, fuente y cadencia. KPIs de inclusión son <strong>vinculantes</strong>:
+    intervenciones que amplíen brechas se rediseñan o cancelan.
+  </p>
+
+  <h2>KPIs de outcome regional</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>KPI</th>
+        <th>Baseline 2026</th>
+        <th>Meta 2032</th>
+        <th>Meta 2035</th>
+      </tr>
+    </thead>
+    <tbody>
+      {outcomeKPIs.map((k) => (
+        <tr>
+          <td>{k.kpi}</td>
+          <td>{k.baseline}</td>
+          <td>{k.meta2032}</td>
+          <td><strong>{k.meta2035}</strong></td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+  <h2>KPIs de inclusión vinculantes</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Eje</th>
+        <th>Umbral</th>
+        <th>Si no se cumple</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Brecha rural-urbana en cobertura</td>
+        <td>-20% en 24 meses</td>
+        <td>Plan correctivo 90 días → sunset si persiste 12 meses adicionales</td>
+      </tr>
+      <tr>
+        <td>Mujeres en empleo nuevo Futuros directo</td>
+        <td>≥45% (rampa a 50%)</td>
+        <td>Cuotas + auditoría de procesos de selección</td>
+      </tr>
+      <tr>
+        <td>Versión funcional en lenguas requeridas</td>
+        <td>100% en sectores piloto</td>
+        <td>Bloqueo de financiamiento</td>
+      </tr>
+      <tr>
+        <td>Cierre relativo Q1 ingresos</td>
+        <td>Monitoreo trimestral</td>
+        <td>Trigger de revisión si empeora</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Compromisos de transparencia</h2>
+  <ul>
+    <li>Dashboard público con actualización trimestral mínima.</li>
+    <li>Datos abiertos en formatos machine-readable.</li>
+    <li>Auditoría externa independiente anual con publicación íntegra.</li>
+    <li>Mecanismo ciudadano de impugnación de cifras.</li>
+  </ul>
+</Layout>

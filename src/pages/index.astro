@@ -1,0 +1,92 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Inicio">
+  <h1>Una salida no incremental para América Latina</h1>
+  <p class="lead">
+    Futuros es un blueprint regional para que América Latina lidere la transformación tecnológica ética e
+    inclusiva hacia 2035, usando IA y tecnologías frontera como aceleradores sistémicos —no como soluciones
+    aisladas— para romper la trampa de bajo crecimiento y alta desigualdad.
+  </p>
+
+  <section class="kpi-grid">
+    <div class="kpi-card">
+      <div class="num">1.9–2.3%</div>
+      <div class="label">Crecimiento de productividad anual proyectado a 2035 (vs. 0.6% histórico)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="num">USD 1.1–1.7T</div>
+      <div class="label">Valor económico adicional acumulado a 2035</div>
+    </div>
+    <div class="kpi-card">
+      <div class="num">60%</div>
+      <div class="label">Cómputo crítico en jurisdicción regional para 2035</div>
+    </div>
+    <div class="kpi-card">
+      <div class="num">15M</div>
+      <div class="label">Empleos formales nuevos en sectores Futuros</div>
+    </div>
+  </section>
+
+  <h2>Tres apuestas no negociables</h2>
+  <div class="pillar">
+    <h3>Localmente fundamentado</h3>
+    <p>
+      Modelos en español, portugués y al menos 8 lenguas indígenas con desempeño paritario o superior a modelos
+      extranjeros en tareas regionales. Datos de la región. Benchmarks que reflejan la economía informal real, no
+      la idealizada.
+    </p>
+  </div>
+  <div class="pillar">
+    <h3>Inclusivo y ético por diseño</h3>
+    <p>
+      KPIs de cierre de brechas <strong>vinculantes</strong>, no aspiracionales. Auditoría algorítmica obligatoria.
+      Mecanismo ciudadano de queja con poder real. Lista de usos rojos prohibidos.
+    </p>
+  </div>
+  <div class="pillar">
+    <h3>Leapfrogging explícito</h3>
+    <p>
+      Saltarse etapas: pago digital móvil sin bancarización tradicional; salud preventiva con wearables sin ola
+      de hospitales nuevos; redes inteligentes sin replicar grid centralizado. Aprovechar las ventajas
+      comparativas reales de la región: cobertura móvil, recursos renovables, litio, juventud, idiomas.
+    </p>
+  </div>
+
+  <h2>Hoja de ruta</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Fase</th>
+        <th>Años</th>
+        <th>Objetivo</th>
+        <th>Inversión</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Demostración</td>
+        <td>2026–2028</td>
+        <td>8 pilotos cross-país + diseño institucional + primeras fundaciones</td>
+        <td>USD 2–3 bn</td>
+      </tr>
+      <tr>
+        <td>Escalado nacional</td>
+        <td>2029–2032</td>
+        <td>Adopción nacional + commons regional operativo</td>
+        <td>USD 8–12 bn</td>
+      </tr>
+      <tr>
+        <td>Transformación</td>
+        <td>2033–2035</td>
+        <td>Consolidación, exportación, ampliación</td>
+        <td>USD 5–8 bn</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top: 3rem;">
+    <a href={`${import.meta.env.BASE_URL}/blueprint`.replace(/\/+/g, '/')} class="tag accent">Leer el blueprint completo →</a>
+  </p>
+</Layout>
