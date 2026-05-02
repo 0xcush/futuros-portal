@@ -15,19 +15,75 @@ const { title, description = "Futuros — blueprint regional para América Latin
     <title>{title} · Futuros</title>
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
+    <script is:inline>
+      // Gate, not security: a stakeholder-portal access password.
+      // Real protection should be enforced server-side (Vercel deployment protection,
+      // OAuth proxy, or a dedicated middleware).
+      (function () {
+        var EXPECTED = "Futuros137";
+        var KEY = "futuros_gate_v1";
+        try {
+          if (window.sessionStorage.getItem(KEY) === EXPECTED) return;
+        } catch (e) {}
+        document.documentElement.style.visibility = "hidden";
+        window.addEventListener("DOMContentLoaded", function () {
+          var overlay = document.createElement("div");
+          overlay.id = "futuros-gate";
+          overlay.innerHTML =
+            '<div class="gate-card">' +
+            '<h1>Futuros</h1>' +
+            '<p>Esta es una vista preliminar para stakeholders. Ingresa la contraseña para continuar.</p>' +
+            '<form id="gate-form">' +
+            '<input id="gate-input" type="password" autocomplete="off" placeholder="Contraseña" autofocus />' +
+            '<button type="submit">Entrar</button>' +
+            '</form>' +
+            '<p class="gate-error" id="gate-error" hidden>Contraseña incorrecta.</p>' +
+            "</div>";
+          var style = document.createElement("style");
+          style.textContent = [
+            "#futuros-gate{position:fixed;inset:0;background:#0e1116;display:flex;align-items:center;justify-content:center;z-index:99999;font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;color:#e6e8eb;}",
+            "#futuros-gate .gate-card{max-width:420px;width:100%;padding:2.5rem;border:1px solid #232a35;background:#161b22;border-radius:8px;}",
+            "#futuros-gate h1{font-family:Georgia,serif;font-size:2rem;margin:0 0 1rem;}",
+            "#futuros-gate p{color:#8b949e;line-height:1.55;}",
+            "#futuros-gate form{display:flex;gap:.5rem;margin-top:1.5rem;}",
+            "#futuros-gate input{flex:1;padding:.7rem .9rem;background:#0e1116;border:1px solid #232a35;color:#e6e8eb;border-radius:6px;font-size:1rem;}",
+            "#futuros-gate input:focus{outline:2px solid #d97757;outline-offset:1px;}",
+            "#futuros-gate button{padding:.7rem 1.2rem;background:#d97757;color:#0e1116;border:none;border-radius:6px;font-weight:600;cursor:pointer;}",
+            "#futuros-gate .gate-error{color:#ff8585;font-size:.9rem;margin-top:.75rem;}",
+          ].join("");
+          document.head.appendChild(style);
+          document.body.appendChild(overlay);
+          var form = document.getElementById("gate-form");
+          var input = document.getElementById("gate-input");
+          var err = document.getElementById("gate-error");
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            if (input.value === EXPECTED) {
+              try { window.sessionStorage.setItem(KEY, EXPECTED); } catch (_) {}
+              overlay.remove();
+              document.documentElement.style.visibility = "";
+            } else {
+              err.hidden = false;
+              input.value = "";
+              input.focus();
+            }
+          });
+        });
+      })();
+    </script>
   </head>
   <body>
     <header style="border-bottom: 1px solid var(--border); padding: 1rem 1.5rem;">
       <nav style="max-width: var(--max-w); margin: 0 auto; display: flex; gap: 1.5rem; align-items: center;">
-        <a href={import.meta.env.BASE_URL} style="font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--fg); text-decoration: none;">
+        <a href="/" style="font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--fg); text-decoration: none;">
           Futuros
         </a>
         <span style="flex: 1;"></span>
-        <a href={`${import.meta.env.BASE_URL}/blueprint`.replace(/\/+/g, '/')}>Blueprint</a>
-        <a href={`${import.meta.env.BASE_URL}/pilotos`.replace(/\/+/g, '/')}>Pilotos</a>
-        <a href={`${import.meta.env.BASE_URL}/paises`.replace(/\/+/g, '/')}>Países</a>
-        <a href={`${import.meta.env.BASE_URL}/kpis`.replace(/\/+/g, '/')}>KPIs</a>
-        <a href={`${import.meta.env.BASE_URL}/preguntas`.replace(/\/+/g, '/')}>Preguntas</a>
+        <a href="/blueprint">Blueprint</a>
+        <a href="/pilotos">Pilotos</a>
+        <a href="/paises">Países</a>
+        <a href="/kpis">KPIs</a>
+        <a href="/preguntas">Preguntas</a>
       </nav>
     </header>
     <main>
