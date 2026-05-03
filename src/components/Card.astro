@@ -1,0 +1,32 @@
+---
+interface Props {
+  title: string;
+  tag?: string;
+}
+const { title, tag } = Astro.props;
+---
+
+<article class="card">
+  {tag && <span class="card-tag">{tag}</span>}
+  <h3>{title}</h3>
+  <slot />
+</article>
+
+<style>
+.card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: var(--bg-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.card h3 { margin: 0; }
+.card-tag {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+}
+</style>

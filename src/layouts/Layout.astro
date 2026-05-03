@@ -15,6 +15,14 @@ const { title, description = "Futuros — blueprint regional para América Latin
     <title>{title} · Futuros</title>
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
+    <meta property="og:title" content={`${title} · Futuros`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_LA" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} · Futuros`} />
+    <meta name="twitter:description" content={description} />
+    <link rel="alternate" type="application/rss+xml" title="Futuros — updates" href="/rss.xml" />
     <script is:inline>
       // Gate, not security: a stakeholder-portal access password.
       // Real protection should be enforced server-side (Vercel deployment protection,
@@ -41,7 +49,7 @@ const { title, description = "Futuros — blueprint regional para América Latin
             "</div>";
           var style = document.createElement("style");
           style.textContent = [
-            "#futuros-gate{position:fixed;inset:0;background:#0e1116;display:flex;align-items:center;justify-content:center;z-index:99999;font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;color:#e6e8eb;}",
+            "#futuros-gate{position:fixed;inset:0;background:#0e1116;display:flex;align-items:center;justify-content:center;z-index:99999;font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;color:#e6e8eb;visibility:visible;}",
             "#futuros-gate .gate-card{max-width:420px;width:100%;padding:2.5rem;border:1px solid #232a35;background:#161b22;border-radius:8px;}",
             "#futuros-gate h1{font-family:Georgia,serif;font-size:2rem;margin:0 0 1rem;}",
             "#futuros-gate p{color:#8b949e;line-height:1.55;}",
@@ -74,16 +82,25 @@ const { title, description = "Futuros — blueprint regional para América Latin
   </head>
   <body>
     <header style="border-bottom: 1px solid var(--border); padding: 1rem 1.5rem;">
-      <nav style="max-width: var(--max-w); margin: 0 auto; display: flex; gap: 1.5rem; align-items: center;">
-        <a href="/" style="font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--fg); text-decoration: none;">
+      <nav style="max-width: var(--max-w); margin: 0 auto; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; font-size: 0.92rem;">
+        <a href="/" style="font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--fg); text-decoration: none; margin-right: auto;">
           Futuros
         </a>
-        <span style="flex: 1;"></span>
         <a href="/blueprint">Blueprint</a>
         <a href="/pilotos">Pilotos</a>
         <a href="/paises">Países</a>
+        <a href="/hubs">Hubs</a>
+        <a href="/talento">Talento</a>
+        <a href="/etica">Ética</a>
+        <a href="/financiamiento">Financiamiento</a>
+        <a href="/gobernanza">Gobernanza</a>
+        <a href="/geopolitica">Geopolítica</a>
+        <a href="/actores">Actores</a>
         <a href="/kpis">KPIs</a>
         <a href="/preguntas">Preguntas</a>
+        <a href="/metodologia">Metodología</a>
+        <a href="/sobre">Sobre</a>
+        <a href="/contacto">Contacto</a>
       </nav>
     </header>
     <main>

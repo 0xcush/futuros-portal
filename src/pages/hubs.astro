@@ -1,0 +1,90 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const hubs = [
+  {
+    name: "Hub Austral",
+    location: "Chile (Atacama)",
+    energy: "Solar (radiación más alta del planeta)",
+    spec: "Entrenamiento + inferencia",
+    rationale: "Solar abundante; demanda hyperscaler existente; capital privado disponible; estabilidad institucional.",
+    capex_low: "$200M",
+  },
+  {
+    name: "Hub Atlántico",
+    location: "Brasil NE",
+    energy: "Eólica + solar",
+    spec: "Entrenamiento + soberanía pt-BR",
+    rationale: "Anchor demográfico y económico; PBIA ya invierte; soberanía lingüística pt-BR.",
+    capex_low: "$250M",
+  },
+  {
+    name: "Hub Andino",
+    location: "Colombia o Perú",
+    energy: "Hidro",
+    spec: "Inferencia + edge",
+    rationale: "Energía limpia barata; centralidad geográfica; sirve telesalud y agro andino.",
+    capex_low: "$80M",
+  },
+  {
+    name: "Hub Caribe",
+    location: "Costa Rica o Panamá",
+    energy: "Hidro + geotermia",
+    spec: "Inferencia + bilingüe",
+    rationale: "Conectividad submarina excelente; talento bilingüe; soberanía Caribe.",
+    capex_low: "$80M",
+  },
+  {
+    name: "Hub Mesoamericano",
+    location: "México (norte solar / Istmo viento)",
+    energy: "Solar + eólica",
+    spec: "Manufactura digital + nearshoring",
+    rationale: "Integración con cadenas norteamericanas; talento STEM; demanda industrial.",
+    capex_low: "$100M",
+  },
+];
+---
+
+<Layout title="Hubs HPC">
+  <h1>Red distribuida de cómputo regional</h1>
+  <p class="lead">
+    Cinco hubs HPC alimentados primariamente por renovables locales, propiedad híbrida (51% pública, 49% privada),
+    soberanía contractual con jurisdicción regional, 30% capacidad reservada para investigación pública. Total
+    capex estimado USD 8–12 bn entre 2026–2032.
+  </p>
+
+  <h2>Hubs propuestos</h2>
+  {hubs.map(h => (
+    <div class="pillar">
+      <h3>{h.name} — {h.location}</h3>
+      <table>
+        <tbody>
+          <tr><td><strong>Energía base</strong></td><td>{h.energy}</td></tr>
+          <tr><td><strong>Especialización</strong></td><td>{h.spec}</td></tr>
+          <tr><td><strong>Justificación</strong></td><td>{h.rationale}</td></tr>
+          <tr><td><strong>Capex inicial estimado</strong></td><td>{h.capex_low}</td></tr>
+        </tbody>
+      </table>
+    </div>
+  ))}
+
+  <h2>Modelo de gobernanza tripartito</h2>
+  <p>Inspirado en EuroHPC Joint Undertaking, adaptado a contexto LATAM:</p>
+  <ul>
+    <li><strong>Propiedad</strong>: 51% pública (consorcio gobiernos + multilaterales), 49% privada (operación, inversión).</li>
+    <li><strong>Soberanía contractual</strong>: jurisdicción local, derecho de auditoría, prohibición uso por terceros estatales sin orden judicial regional.</li>
+    <li><strong>Acceso público garantizado</strong>: 30% de capacidad reservada para investigación pública, salud, educación, emprendimiento de bajo recurso.</li>
+    <li><strong>Energía 100% renovable certificable</strong> desde día uno.</li>
+  </ul>
+
+  <h2>Path de financiamiento</h2>
+  <table>
+    <thead><tr><th>Fuente</th><th>Vehículo</th><th>Estimado</th></tr></thead>
+    <tbody>
+      <tr><td>Multilateral (anchor)</td><td>IDB + CAF + Banco Mundial deuda blanda</td><td>USD 3 bn</td></tr>
+      <tr><td>Capital privado</td><td>PPA energéticos + acuerdos offtake</td><td>USD 4–6 bn</td></tr>
+      <tr><td>Aporte soberano</td><td>Terreno, energía subsidiada cero, exenciones tarifarias</td><td>en especie</td></tr>
+      <tr><td>Bonos Soberanía Digital</td><td>Instrumento nuevo a co-diseñar</td><td>USD 1–2 bn</td></tr>
+    </tbody>
+  </table>
+</Layout>

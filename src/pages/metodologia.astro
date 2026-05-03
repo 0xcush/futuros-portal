@@ -1,0 +1,67 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Metodología">
+  <h1>Metodología</h1>
+  <p class="lead">
+    Cómo trabajamos: blueprint vivo + sistema de agentes IA + validación mecánica + evaluación independiente.
+  </p>
+
+  <h2>Blueprint vivo</h2>
+  <p>El blueprint completo está en repositorio versionado. Cualquier cambio sustantivo deja registro en
+  <code>_changelog.md</code>. Cada sección tiene propietario, cadencia de revisión y mecanismo de impugnación
+  ciudadana cuando aplique.</p>
+
+  <h2>Sistema de agentes IA</h2>
+  <p>14 agentes especializados (8 con schemas tipados de output) compuestos en flows de orquestación
+  sincrónicos y asíncronos. Cada invocación produce:</p>
+  <ul>
+    <li>Output validado contra schema (cuando aplica).</li>
+    <li>Métricas de costo y latencia persistentes.</li>
+    <li>Hash de prompt para auditoría sin almacenar el prompt completo.</li>
+    <li>Verdict de salvaguardas (PII redactada, marcas prohibidas detectadas).</li>
+  </ul>
+
+  <h2>Validación mecánica</h2>
+  <p>Antes de cualquier publicación, <code>tools/validate.py</code> ejecuta verificaciones automáticas:</p>
+  <ul>
+    <li>Todos los archivos del blueprint presentes.</li>
+    <li>Cada piloto mapea a país y pilar.</li>
+    <li>Distribución geográfica de pilotos diversa (no solo BRA/MEX/CHL).</li>
+    <li>Para cada país piloteado, perfil país publicado.</li>
+    <li>Stakeholders regionales clave (CELAC, IDB, CAF, ECLAC) cubiertos.</li>
+  </ul>
+
+  <h2>Evaluación independiente</h2>
+  <p>Cada piloto tiene plan de evaluación pre-registrado. Evaluadores académicos externos. Publicación íntegra
+  obligatoria — éxitos y fracasos. Los pilotos no son demostraciones de marketing.</p>
+
+  <h2>Pivot, pause, sunset</h2>
+  <ul>
+    <li><strong>Pivot</strong>: ajuste de enfoque sin parar operación. Disparado cuando KPI primario está estancado pero variables auxiliares sugieren cambio de táctica.</li>
+    <li><strong>Pause</strong>: pausa cautelar mientras se evalúa. Disparado cuando KPI cae 24 meses consecutivos o hay incidente reputacional/operativo grave.</li>
+    <li><strong>Sunset</strong>: cierre permanente. Disparado por captura confirmada, daño operativo grave atribuible, falla persistente sin path de corrección.</li>
+  </ul>
+
+  <h2>Transparencia</h2>
+  <ul>
+    <li>Dashboard público con KPIs actualizado trimestralmente.</li>
+    <li>Datos abiertos en formatos machine-readable.</li>
+    <li>Auditoría externa anual con publicación íntegra.</li>
+    <li>Mecanismo ciudadano de impugnación de cifras.</li>
+  </ul>
+
+  <h2>Stack técnico</h2>
+  <ul>
+    <li>Blueprint y contenido: Markdown con frontmatter YAML.</li>
+    <li>Agentes: Python + Anthropic SDK (Claude Opus 4.7), Pydantic, asyncio.</li>
+    <li>Portal: Astro static + Vercel.</li>
+    <li>Tests: pytest (90+ tests, mocks de Anthropic).</li>
+    <li>Observabilidad: JSONL logs append-only, cost tracker, audit trail.</li>
+  </ul>
+
+  <h2>Open source</h2>
+  <p>Todo el código del sistema de agentes y herramientas es liberado bajo licencia abierta. El contenido del
+  blueprint es liberado bajo CC BY-SA salvo secciones con consentimiento comunitario específico restrictivo.</p>
+</Layout>

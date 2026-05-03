@@ -1,0 +1,65 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Callout from "../components/Callout.astro";
+---
+
+<Layout title="Ética e inclusión">
+  <h1>Ética, inclusión y soberanía</h1>
+  <p class="lead">
+    Las agendas regionales suelen relegar ética e inclusión a una sección decorativa. En Futuros son diseño
+    operativo: si no se cumplen, el blueprint pierde su razón de ser.
+  </p>
+
+  <h2>Principios mínimos vinculantes</h2>
+  <p>Países adherentes aceptan, mediante convenio firmado:</p>
+  <ol>
+    <li><strong>Derecho a explicación</strong> de toda decisión algorítmica que afecte derechos individuales.</li>
+    <li><strong>Auditoría algorítmica obligatoria</strong> con publicación pública del informe.</li>
+    <li><strong>Sunset clauses</strong>: toda herramienta de uso sensible expira en 4 años; debe re-justificarse.</li>
+    <li><strong>Datos sensibles en jurisdicción nacional</strong>.</li>
+    <li><strong>Mecanismo de queja ciudadana</strong> público y gratuito.</li>
+    <li><strong>Diversidad lingüística</strong>: solución pública en sector piloto debe tener versión funcional en al menos las lenguas oficiales del país y, donde aplique, en lengua indígena con población ≥5%.</li>
+  </ol>
+
+  <h2>Lista de usos rojos (prohibidos)</h2>
+  <Callout type="danger" title="Prohibidos para países adherentes">
+    <ul>
+      <li>Predictive policing masivo (asignación de patrullaje basada en perfiles).</li>
+      <li>Social scoring estatal (puntuación general de ciudadanos).</li>
+      <li>Reconocimiento biométrico masivo en espacio público sin orden judicial individualizada.</li>
+      <li>Sistemas autónomos letales o de control de fronteras letales.</li>
+      <li>Manipulación electoral asistida por IA generativa atribuible al Estado.</li>
+      <li>Vigilancia laboral encubierta.</li>
+    </ul>
+  </Callout>
+
+  <h2>Bias mitigation contextual a LATAM</h2>
+  <p>Las pruebas estándar de bias se entrenan con datos US/UE. En LATAM, los ejes críticos de discriminación incluyen:</p>
+  <ul>
+    <li>Color de piel + clase socioeconómica.</li>
+    <li>Origen geográfico (capital vs. provincia/interior).</li>
+    <li>Acento/dialecto regional, indígena, afro.</li>
+    <li>Estatus migratorio.</li>
+    <li>Pertenencia a economía formal vs. informal.</li>
+    <li>Lengua materna (español vs. portugués vs. lenguas indígenas).</li>
+    <li>Acceso a documentación oficial completa.</li>
+  </ul>
+
+  <h2>Datos indígenas</h2>
+  <ul>
+    <li><strong>Consentimiento colectivo previo, libre e informado</strong> según OIT 169 y Declaración ONU.</li>
+    <li><strong>Gobernanza por consejos comunitarios</strong>.</li>
+    <li><strong>Retorno de valor a comunidades</strong> si los datos generan valor económico.</li>
+    <li><strong>Modelos en lenguas indígenas como bien público</strong>.</li>
+    <li><strong>Prohibición de extracción</strong> sin consentimiento documentado y revisable.</li>
+  </ul>
+
+  <h2>Just transition</h2>
+  <ol>
+    <li><strong>Mapeo de exposición laboral</strong> por sector y país, actualizado anualmente.</li>
+    <li><strong>Programas de reconversión</strong> financiados como obligación de adhesión: 0.5% del presupuesto sectorial mínimo.</li>
+    <li><strong>Co-piloto IA para trabajadores existentes</strong> antes que sustitución por IA.</li>
+    <li><strong>Esquemas de protección social modernizados</strong>: portabilidad, ingreso básico territorial donde sea fiscalmente viable.</li>
+    <li><strong>Evaluación de impacto laboral previo</strong> para despliegues a gran escala.</li>
+  </ol>
+</Layout>
